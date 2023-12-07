@@ -2,8 +2,13 @@
 import os
 import csv
 
+
+
+current_directory = os.path.dirname(__file__)
+csv_path = os.path.join(current_directory, 'Resources', 'election_data.csv')
+file = os.path.join(current_directory, "Analysis", "Output.txt")
 #set path for file 
-csvpath = os.path.join('/Users/patricbeaven/Desktop/Bootcamp/03-Python/Starter_Code/PyPoll/Resources/election_data.csv')
+#csvpath = os.path.join('/Users/patricbeaven/Desktop/Bootcamp/03-Python/Starter_Code/PyPoll/Resources/election_data.csv')
 
 #Lists to store data
 ballot_id = []
@@ -11,7 +16,7 @@ county = []
 candidate= []
 
 #Open the file for reading, specify delimiter and variable holding contents, read hear row 
-with open(csvpath) as csvfile:
+with open(csv_path) as csvfile:
     csvreader = csv.reader(csvfile, delimiter=',')
     csv_header = next(csvreader)
 
@@ -68,7 +73,7 @@ print(f'Winner: {winner_name}')
 print(f'------------------------------------')
 
 # Set variable for output file
-file = os.path.join("/Users/patricbeaven/Desktop/Bootcamp/03-Python/Starter_Code/PyPoll/Resources/Output.txt")
+
 
 #  Open the output file
 with open(file, "w") as output_file:
