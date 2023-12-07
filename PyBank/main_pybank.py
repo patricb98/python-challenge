@@ -2,15 +2,19 @@
 import os
 import csv
 
+
+current_directory = os.path.dirname(__file__)
+csv_path = os.path.join(current_directory, 'Resources', 'budget_data.csv')
+file = os.path.join(current_directory, "Analysis", "Output.txt")
 #set path for file 
-csvpath = os.path.join('Resources','budget_data.csv')
+#csvpath = os.path.join("Resources/budget_data.csv")
 
 #Lists to store data
 date = []
 p_l = []
 
 #Open the file for reading, specify delimiter and variable holding contents, read hear row 
-with open(csvpath) as csvfile:
+with open(csv_path) as csvfile:
     csvreader = csv.reader(csvfile, delimiter=',')
     csv_header = next(csvreader)
 
@@ -51,7 +55,8 @@ print(f'Greatest Increase in Profits: {inc_month}  (${inc_profits})')
 print(f'Greatest Decrease in Profits: {dec_month}  (${dec_profits})')
 
 # Set variable for output file
-file = os.path.join('Analysis','Output.txt')
+
+
 
 #  Open the output file
 with open(file, "w") as output_file:
