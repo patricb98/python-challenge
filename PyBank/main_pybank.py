@@ -3,7 +3,7 @@ import os
 import csv
 
 #set path for file 
-csvpath = os.path.join('../Resources/budget_data.csv')
+csvpath = os.path.join('Resources','budget_data.csv')
 
 #Lists to store data
 date = []
@@ -51,7 +51,7 @@ print(f'Greatest Increase in Profits: {inc_month}  (${inc_profits})')
 print(f'Greatest Decrease in Profits: {dec_month}  (${dec_profits})')
 
 # Set variable for output file
-file = os.path.join("/Resources/Output.txt")
+file = os.path.join('Analysis','Output.txt')
 
 #  Open the output file
 with open(file, "w") as output_file:
